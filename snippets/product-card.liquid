@@ -1,0 +1,17 @@
+<a href="{{ card_product.url }}" class="product-card">
+  <div class="product-card__media">
+    {% if card_product.featured_media %}
+      {{ card_product.featured_media | image_url: width: 640 | image_tag: loading: 'lazy', class: 'product-card__img' }}
+    {% else %}
+      <div class="media-placeholder media-placeholder--small" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        <span>Bild folgt</span>
+      </div>
+    {% endif %}
+  </div>
+  <h3 class="product-card__title">{{ card_product.title }}</h3>
+  <p class="product-card__price">
+    {%- if card_product.price_varies %}ab {% endif -%}
+    {{ card_product.price_min | money }}
+  </p>
+</a>

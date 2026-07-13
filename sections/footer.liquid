@@ -1,0 +1,86 @@
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__col site-footer__about">
+      <p class="site-footer__brand">{{ shop.name }}</p>
+      {% if section.settings.text != blank %}
+        <div class="site-footer__text">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.menu.links.size > 0 %}
+      <nav class="site-footer__col" aria-label="Footer-Navigation">
+        <p class="site-footer__heading">{{ section.settings.menu_heading | default: 'Links' }}</p>
+        <ul class="site-footer__links">
+          {% for link in section.settings.menu.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    {% if section.settings.legal_menu.links.size > 0 %}
+      <nav class="site-footer__col" aria-label="Rechtliches">
+        <p class="site-footer__heading">{{ section.settings.legal_heading | default: 'Rechtliches' }}</p>
+        <ul class="site-footer__links">
+          {% for link in section.settings.legal_menu.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Alle Rechte vorbehalten.</p>
+    {% if section.settings.show_payment_icons %}
+      <ul class="site-footer__payment" aria-label="Zahlungsarten">
+        {% for type in shop.enabled_payment_types %}
+          <li>{{ type | payment_type_svg_tag: class: 'payment-icon' }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Kurzbeschreibung",
+      "default": "<p>Cleveres Zubehör für einen kühlen Sommer im Auto.</p>"
+    },
+    {
+      "type": "text",
+      "id": "menu_heading",
+      "label": "Überschrift Menü-Spalte",
+      "default": "Shop"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer-Menü",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "legal_heading",
+      "label": "Überschrift Rechtliches-Spalte",
+      "default": "Rechtliches"
+    },
+    {
+      "type": "link_list",
+      "id": "legal_menu",
+      "label": "Menü für Rechtstexte"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Zahlungsarten anzeigen",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

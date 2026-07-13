@@ -1,0 +1,60 @@
+<section class="cart section-pad">
+  <div class="container cart__container">
+    <h1>Warenkorb</h1>
+
+    {% if cart.item_count == 0 %}
+      <p class="empty-note">Dein Warenkorb ist leer.</p>
+      <a class="btn" href="{{ routes.all_products_collection_url }}">Weiter einkaufen</a>
+    {% else %}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart__form">
+        <div class="cart__lines">
+          {% for item in cart.items %}
+            <div class="cart-line">
+              <div class="cart-line__media">
+                {% if item.image %}
+                  <img src="{{ item.image | image_url: width: 240 }}" alt="{{ item.title | escape }}" loading="lazy">
+                {% else %}
+                  <div class="media-placeholder media-placeholder--small" aria-hidden="true">
+                    <span>—</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="cart-line__info">
+                <a class="cart-line__title" href="{{ item.url }}">{{ item.product.title }}</a>
+                {% unless item.product.has_only_default_variant %}
+                  <p class="cart-line__variant">{{ item.variant.title }}</p>
+                {% endunless %}
+                <a class="cart-line__remove" href="{{ item.url_to_remove }}">Entfernen</a>
+              </div>
+              <div class="cart-line__qty">
+                <label class="visually-hidden" for="Qty-{{ forloop.index }}">Menge</label>
+                <input id="Qty-{{ forloop.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0">
+              </div>
+              <p class="cart-line__price">{{ item.final_line_price | money }}</p>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="cart__footer">
+          <div class="cart__note">
+            <label for="CartNote">Anmerkung zur Bestellung (optional)</label>
+            <textarea id="CartNote" name="note" rows="3">{{ cart.note }}</textarea>
+          </div>
+          <div class="cart__summary">
+            <p class="cart__subtotal"><span>Zwischensumme</span> <strong>{{ cart.total_price | money }}</strong></p>
+            <p class="cart__hint">inkl. MwSt. — Versandkosten werden an der Kasse berechnet.</p>
+            <button type="submit" name="update" class="btn btn--ghost">Warenkorb aktualisieren</button>
+            <button type="submit" name="checkout" class="btn btn--full">Zur Kasse</button>
+          </div>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Warenkorb",
+  "settings": []
+}
+{% endschema %}

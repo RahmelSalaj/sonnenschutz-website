@@ -1,0 +1,57 @@
+<section class="richtext section-pad">
+  <div class="container richtext__container">
+    {% if section.settings.kicker != blank %}
+      <p class="kicker">{{ section.settings.kicker }}</p>
+    {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.text != blank %}
+      <div class="richtext__body rte">{{ section.settings.text }}</div>
+    {% endif %}
+    {% if section.settings.button_label != blank %}
+      <a class="btn" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text mit Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kleine Überzeile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Bereit für einen kühlen Sommer?"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Hol dir den faltbaren Sonnenschutz und steig nie wieder in ein aufgeheiztes Auto.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button-Text",
+      "default": "Jetzt entdecken"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button-Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text mit Button"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+<article class="article section-pad">
+  <div class="container page__container">
+    <p class="kicker">{{ article.published_at | date: '%d.%m.%Y' }}</p>
+    <h1>{{ article.title }}</h1>
+    {% if article.image %}
+      {{ article.image | image_url: width: 1400 | image_tag: loading: 'eager', class: 'article__img' }}
+    {% endif %}
+    <div class="rte">{{ article.content }}</div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Blogbeitrag",
+  "settings": []
+}
+{% endschema %}

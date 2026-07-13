@@ -1,0 +1,63 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="{{ routes.root_url }}">
+      {% if settings.logo %}
+        <img
+          src="{{ settings.logo | image_url: width: 600 }}"
+          alt="{{ shop.name | escape }}"
+          width="{{ settings.logo_width }}"
+          style="width: {{ settings.logo_width }}px"
+          loading="eager"
+        >
+      {% else %}
+        <span class="site-header__wordmark">{{ shop.name }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="site-header__nav" aria-label="Hauptnavigation">
+      {% for link in section.settings.menu.links %}
+        <a href="{{ link.url }}" class="site-header__link{% if link.current %} is-active{% endif %}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="{{ routes.cart_url }}" class="site-header__cart" aria-label="Warenkorb ({{ cart.item_count }} Artikel)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2.5 3h2l2.2 12.2a1.5 1.5 0 0 0 1.5 1.3h9.6a1.5 1.5 0 0 0 1.5-1.2L21.5 7H5.1"/>
+          <circle cx="9.5" cy="20" r="1.4"/>
+          <circle cx="17.5" cy="20" r="1.4"/>
+        </svg>
+        {% if cart.item_count > 0 %}
+          <span class="site-header__cart-count" aria-hidden="true">{{ cart.item_count }}</span>
+        {% endif %}
+      </a>
+
+      <details class="site-header__drawer">
+        <summary aria-label="Menü öffnen">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </summary>
+        <div class="site-header__drawer-panel">
+          {% for link in section.settings.menu.links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menü",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

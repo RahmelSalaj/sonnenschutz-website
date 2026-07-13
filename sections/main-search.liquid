@@ -1,0 +1,41 @@
+<section class="search section-pad">
+  <div class="container">
+    <header class="section-head">
+      <h1>Suche</h1>
+    </header>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search__form">
+      <label class="visually-hidden" for="SearchInput">Suchbegriff</label>
+      <input id="SearchInput" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Suchen …">
+      <button type="submit" class="btn">Suchen</button>
+    </form>
+
+    {% if search.performed %}
+      {% paginate search.results by 12 %}
+        {% if search.results.size == 0 %}
+          <p class="empty-note">Keine Ergebnisse für „{{ search.terms | escape }}“.</p>
+        {% else %}
+          <div class="product-grid">
+            {% for item in search.results %}
+              {% if item.object_type == 'product' %}
+                {% render 'product-card', card_product: item %}
+              {% else %}
+                <a class="product-card" href="{{ item.url }}">
+                  <h3 class="product-card__title">{{ item.title }}</h3>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="pagination-wrap">{{ paginate | default_pagination }}</div>
+        {% endif %}
+      {% endpaginate %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Suche",
+  "settings": []
+}
+{% endschema %}

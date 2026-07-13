@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "text": "Sichere Bezahlung über Shopify"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "text": "14 Tage Widerrufsrecht"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "text": "Fragen? Wir antworten schnell per E-Mail"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "show_vendor": false
+      }
+    }
+  },
+  "order": ["main"]
+}

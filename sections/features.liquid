@@ -1,0 +1,103 @@
+<section class="features section-pad section-soft">
+  <div class="container">
+    <div class="section-head">
+      {% if section.settings.kicker != blank %}
+        <p class="kicker">{{ section.settings.kicker }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="features__grid">
+      {% for block in section.blocks %}
+        <div class="feature-card" {{ block.shopify_attributes }}>
+          <div class="feature-card__icon" aria-hidden="true">
+            {% case block.settings.icon %}
+              {% when 'sun' %}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+              {% when 'clock' %}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+              {% when 'shield' %}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-2.9 7.3-7 9-4.1-1.7-7-4.7-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              {% when 'box' %}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8h11l-1 12h-9l-1-12z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+              {% else %}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 5.4L20 9l-4.4 3.8L17 19l-5-3-5 3 1.4-6.2L4 9l5.8-.6L12 3z"/></svg>
+            {% endcase %}
+          </div>
+          {% if block.settings.heading != blank %}
+            <h3 class="feature-card__heading">{{ block.settings.heading }}</h3>
+          {% endif %}
+          {% if block.settings.text != blank %}
+            <p class="feature-card__text">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vorteile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kleine Überzeile",
+      "default": "Deine Vorteile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Warum ein faltbarer Sonnenschutz?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Vorteil",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "sun", "label": "Sonne" },
+            { "value": "clock", "label": "Uhr" },
+            { "value": "shield", "label": "Schild" },
+            { "value": "box", "label": "Tasche" },
+            { "value": "star", "label": "Stern" }
+          ],
+          "default": "sun"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Überschrift",
+          "default": "Vorteil"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vorteile",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
+{% endschema %}

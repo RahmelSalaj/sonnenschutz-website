@@ -1,0 +1,37 @@
+<section class="blog section-pad">
+  <div class="container">
+    <header class="section-head">
+      <h1>{{ blog.title }}</h1>
+    </header>
+
+    {% paginate blog.articles by 12 %}
+      {% if blog.articles.size == 0 %}
+        <p class="empty-note">Hier gibt es noch keine Beiträge.</p>
+      {% else %}
+        <div class="product-grid">
+          {% for article in blog.articles %}
+            <a href="{{ article.url }}" class="product-card">
+              <div class="product-card__media">
+                {% if article.image %}
+                  {{ article.image | image_url: width: 640 | image_tag: loading: 'lazy', class: 'product-card__img' }}
+                {% else %}
+                  <div class="media-placeholder media-placeholder--small" aria-hidden="true"><span>Beitrag</span></div>
+                {% endif %}
+              </div>
+              <h3 class="product-card__title">{{ article.title }}</h3>
+              <p class="product-card__price">{{ article.published_at | date: '%d.%m.%Y' }}</p>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="pagination-wrap">{{ paginate | default_pagination }}</div>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": []
+}
+{% endschema %}

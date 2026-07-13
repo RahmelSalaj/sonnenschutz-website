@@ -1,0 +1,136 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "kicker": "Faltbarer Sonnenschutz für die Frontscheibe",
+        "heading": "Dein Auto bleibt kühl. Auch wenn die Sonne brennt.",
+        "text": "In Sekunden wie ein Regenschirm hinter der Frontscheibe aufgespannt: reflektiert Sonnenlicht und UV-Strahlen und schützt Cockpit, Lenkrad und Sitze vor Hitze.",
+        "button_label": "Zum Sonnenschutz",
+        "button_link": "/products/faltbarer-auto-sonnenschutz-fur-die-frontscheibe",
+        "note": "In zwei Größen — passend für die meisten Fahrzeuge"
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "sun",
+            "heading": "Reflektiert Sonne & UV",
+            "text": "Die verspiegelte Oberfläche wirft Sonnenstrahlen zurück, bevor sie den Innenraum aufheizen."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "clock",
+            "heading": "In Sekunden aufgespannt",
+            "text": "Regenschirm-Mechanik: aufspannen, hinter die Scheibe setzen, fertig — ganz ohne Saugnäpfe."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "heading": "Schützt dein Cockpit",
+            "text": "Bewahrt Armaturenbrett, Lenkrad und Sitze vor Hitze und vorzeitigem Ausbleichen."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "box",
+            "heading": "Klein verstaut",
+            "text": "Zusammengefaltet passt er samt Aufbewahrungstasche in jede Türablage."
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": {
+        "kicker": "Deine Vorteile",
+        "heading": "Warum ein faltbarer Sonnenschutz?"
+      }
+    },
+    "how": {
+      "type": "how-it-works",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "heading": "Aufspannen",
+            "text": "Öffne den Sonnenschutz wie einen Regenschirm."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "heading": "Einsetzen",
+            "text": "Setze ihn hinter die Frontscheibe und klappe die Sonnenblenden herunter — das fixiert ihn."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "heading": "Losfahren & verstauen",
+            "text": "Vor der Fahrt zusammenfalten und in der kleinen Tasche verstauen."
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "kicker": "Kinderleicht",
+        "heading": "So funktioniert's"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Passt der Sonnenschutz in mein Auto?",
+            "answer": "<p>Er ist in zwei Größen erhältlich: <strong>Groß</strong> für die meisten PKW, Kombis und SUV, <strong>Klein</strong> für Kleinwagen und kompakte Frontscheiben. Die genauen Maße findest du auf der Produktseite.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Wie befestige ich ihn?",
+            "answer": "<p>Ganz ohne Werkzeug und ohne Saugnäpfe: aufspannen, hinter die Frontscheibe setzen und die Sonnenblenden herunterklappen — fertig.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Was ist im Lieferumfang enthalten?",
+            "answer": "<p>Der faltbare Sonnenschutz inklusive passender Aufbewahrungstasche.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Wie lange dauert der Versand?",
+            "answer": "<p>Alle Informationen zu Versandkosten und Lieferzeiten findest du auf unserer Versandseite.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "kicker": "Gut zu wissen",
+        "heading": "Häufige Fragen"
+      }
+    },
+    "cta": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "Bereit für einen kühlen Sommer?",
+        "text": "<p>Hol dir den faltbaren Sonnenschutz und steig nie wieder in ein aufgeheiztes Auto.</p>",
+        "button_label": "Jetzt entdecken",
+        "button_link": "/products/faltbarer-auto-sonnenschutz-fur-die-frontscheibe"
+      }
+    }
+  },
+  "order": ["hero", "features", "how", "faq", "cta"]
+}

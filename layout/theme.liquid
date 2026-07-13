@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_accent }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  <title>
+    {{- page_title -}}
+    {%- if current_page != 1 %} &ndash; Seite {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {{ settings.body_font | font_face: font_display: 'swap' }}
+  {%- assign body_font_bold = settings.body_font | font_modify: 'weight', 'bolder' -%}
+  {%- if body_font_bold -%}
+    {{ body_font_bold | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
+  <style>
+    :root {
+      --font-body: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+      --font-weight-body: {{ settings.body_font.weight | default: 400 }};
+      --color-bg: {{ settings.color_bg }};
+      --color-bg-soft: {{ settings.color_bg_soft }};
+      --color-text: {{ settings.color_text }};
+      --color-muted: {{ settings.color_text | color_modify: 'alpha', 0.62 }};
+      --color-accent: {{ settings.color_accent }};
+      --color-accent-soft: {{ settings.color_accent | color_modify: 'alpha', 0.09 }};
+      --color-accent-text: {{ settings.color_accent_text }};
+      --color-border: {{ settings.color_text | color_modify: 'alpha', 0.12 }};
+    }
+  </style>
+
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+
+  {{ content_for_header }}
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  {% section 'header' %}
+
+  <main id="main" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+</body>
+</html>
