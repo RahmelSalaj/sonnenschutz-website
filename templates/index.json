@@ -3,12 +3,13 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "kicker": "Faltbarer Sonnenschutz für die Frontscheibe",
-        "heading": "Dein Auto bleibt kühl. Auch wenn die Sonne brennt.",
-        "text": "In Sekunden wie ein Regenschirm hinter der Frontscheibe aufgespannt: reflektiert Sonnenlicht und UV-Strahlen und schützt Cockpit, Lenkrad und Sitze vor Hitze.",
-        "button_label": "Zum Sonnenschutz",
-        "button_link": "/products/faltbarer-auto-sonnenschutz-fur-die-frontscheibe",
-        "note": "In zwei Größen — passend für die meisten Fahrzeuge"
+        "kicker": "Faltbarer Frontscheiben-Sonnenschirm",
+        "heading": "Nie wieder am Lenkrad verbrennen.",
+        "text": "In 2 Sekunden wie ein Regenschirm hinter der Scheibe aufgespannt. Die Titan-Beschichtung blockt bis zu 99 % der UV-Strahlung — Lenkrad, Armaturenbrett und Kindersitz bleiben um bis zu 26 °C kühler.",
+        "button_label": "Jetzt sichern — ab 29,95 €",
+        "button_link": "/products/frontscheiben-sonnenschirm",
+        "note": "✔ Kostenloser Versand ✔ 14 Tage Geld-zurück ✔ Knick-Garantie",
+        "image": "shopify://shop_images/b4a24bcf-8846-4f04-99ac-c7bc8a39d8cd.jpg"
       }
     },
     "features": {
@@ -18,24 +19,24 @@
           "type": "feature",
           "settings": {
             "icon": "sun",
-            "heading": "Reflektiert Sonne & UV",
-            "text": "Die verspiegelte Oberfläche wirft Sonnenstrahlen zurück, bevor sie den Innenraum aufheizen."
+            "heading": "99 % UV-Schutz",
+            "text": "Die reflektierende Titan-Beschichtung wirft Sonnenstrahlen zurück, bevor sie den Innenraum aufheizen."
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
             "icon": "clock",
-            "heading": "In Sekunden aufgespannt",
-            "text": "Regenschirm-Mechanik: aufspannen, hinter die Scheibe setzen, fertig — ganz ohne Saugnäpfe."
+            "heading": "In 2 Sekunden aufgespannt",
+            "text": "Regenschirm-Mechanik: aufspannen, hinter die Scheibe setzen, fertig — ganz ohne Saugnäpfe oder Kleber."
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
             "icon": "shield",
-            "heading": "Schützt dein Cockpit",
-            "text": "Bewahrt Armaturenbrett, Lenkrad und Sitze vor Hitze und vorzeitigem Ausbleichen."
+            "heading": "Schützt Cockpit & Kindersitz",
+            "text": "Lenkrad, Armaturenbrett und Kindersitz-Schnallen bleiben im Schatten — kein Verbrennen, kein Ausbleichen."
           }
         },
         "f4": {
@@ -50,7 +51,7 @@
       "block_order": ["f1", "f2", "f3", "f4"],
       "settings": {
         "kicker": "Deine Vorteile",
-        "heading": "Warum ein faltbarer Sonnenschutz?"
+        "heading": "Warum der Schattenpilot?"
       }
     },
     "how": {
@@ -60,7 +61,7 @@
           "type": "step",
           "settings": {
             "heading": "Aufspannen",
-            "text": "Öffne den Sonnenschutz wie einen Regenschirm."
+            "text": "Öffne den Sonnenschirm wie einen Regenschirm."
           }
         },
         "s2": {
@@ -90,8 +91,8 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Passt der Sonnenschutz in mein Auto?",
-            "answer": "<p>Er ist in zwei Größen erhältlich: <strong>Groß</strong> für die meisten PKW, Kombis und SUV, <strong>Klein</strong> für Kleinwagen und kompakte Frontscheiben. Die genauen Maße findest du auf der Produktseite.</p>"
+            "question": "Passt der Sonnenschirm in mein Auto?",
+            "answer": "<p>Er ist in zwei Größen erhältlich: <strong>Groß (ca. 135 × 79 cm)</strong> für Limousinen, Kombis und SUV, <strong>Klein (ca. 125 × 65 cm)</strong> für Kleinwagen und Kompaktklasse. Die genauen Maße findest du auf der Produktseite.</p>"
           }
         },
         "q2": {
@@ -104,15 +105,15 @@
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Was ist im Lieferumfang enthalten?",
-            "answer": "<p>Der faltbare Sonnenschutz inklusive passender Aufbewahrungstasche.</p>"
+            "question": "Was ist die Knick-Garantie?",
+            "answer": "<p>Die häufigste Schwachstelle bei Auto-Sonnenschirmen ist das Gelenk. Deshalb gilt bei uns: Bricht das Schirmgelenk bei normaler Nutzung, ersetzen wir deinen Schirm <strong>kostenlos</strong> — ein Foto per E-Mail genügt.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
             "question": "Wie lange dauert der Versand?",
-            "answer": "<p>Alle Informationen zu Versandkosten und Lieferzeiten findest du auf unserer Versandseite.</p>"
+            "answer": "<p>Der Versand ist <strong>kostenlos</strong> und dauert in der Regel 7–12 Werktage — inklusive Sendungsverfolgung per E-Mail. Alle Details auf der <a href=\"/pages/versand\">Versandseite</a>.</p>"
           }
         }
       },
@@ -125,10 +126,10 @@
     "cta": {
       "type": "rich-text",
       "settings": {
-        "heading": "Bereit für einen kühlen Sommer?",
-        "text": "<p>Hol dir den faltbaren Sonnenschutz und steig nie wieder in ein aufgeheiztes Auto.</p>",
-        "button_label": "Jetzt entdecken",
-        "button_link": "/products/faltbarer-auto-sonnenschutz-fur-die-frontscheibe"
+        "heading": "Der Sommer wartet nicht.",
+        "text": "<p>Hol dir den Schattenpilot und steig nie wieder mit Herdplatten-Lenkrad ein. Heute bestellt — in 7–12 Werktagen bei dir.</p>",
+        "button_label": "Zum Sonnenschirm",
+        "button_link": "/products/frontscheiben-sonnenschirm"
       }
     }
   },
