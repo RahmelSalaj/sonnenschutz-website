@@ -2,9 +2,9 @@
   "current": {
     "body_font": "work_sans_n4",
     "color_bg": "#ffffff",
-    "color_bg_soft": "#f5f7fa",
-    "color_text": "#18202e",
-    "color_accent": "#e8590c",
+    "color_bg_soft": "#eef0f2",
+    "color_text": "#101112",
+    "color_accent": "#111214",
     "color_accent_text": "#ffffff",
     "logo_width": 140
   }
