@@ -380,16 +380,59 @@ textarea:focus,
 
 @media (max-width: 860px) {
   .hero-banner {
-    min-height: 72vh;
+    align-items: flex-end;
+    min-height: 76vh;
+    min-height: 76svh;
   }
   .hero-banner__content {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 52px;
+  }
+  .hero-banner__content .kicker {
+    font-size: 0.72rem;
+    margin-bottom: 10px;
+  }
+  .hero-banner__heading {
+    font-size: 2.1rem;
+    line-height: 1.15;
+    max-width: 11em;
+    margin-bottom: 0;
+  }
+  .hero-banner__text,
+  .hero-banner__note {
+    display: none;
+  }
+  .hero-banner__actions {
+    justify-content: center;
+    margin-top: 22px;
   }
   .hero-banner__overlay {
     background:
-      linear-gradient(0deg, rgba(8, 9, 10, 0.62) 0%, rgba(8, 9, 10, 0.3) 55%, rgba(8, 9, 10, 0.12) 100%);
+      linear-gradient(0deg, rgba(8, 9, 10, 0.68) 0%, rgba(8, 9, 10, 0.32) 45%, rgba(8, 9, 10, 0.1) 100%);
   }
+}
+
+/* ==========================================================================
+   Ankündigungsleiste
+   ========================================================================== */
+
+.announcement-bar {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  text-align: center;
+  padding: 9px 16px;
+}
+
+.announcement-bar__text {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* ==========================================================================

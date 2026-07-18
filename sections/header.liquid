@@ -1,3 +1,9 @@
+{% if section.settings.announcement != blank %}
+  <div class="announcement-bar">
+    <p class="announcement-bar__text">{{ section.settings.announcement }}</p>
+  </div>
+{% endif %}
+
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="site-header__brand" href="{{ routes.root_url }}">
@@ -57,6 +63,13 @@
       "id": "menu",
       "label": "Menü",
       "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Ankündigungsleiste",
+      "default": "Kostenloser Versand — 14 Tage Geld-zurück-Garantie",
+      "info": "Schmale Leiste über dem Header. Leer lassen zum Ausblenden."
     }
   ]
 }
