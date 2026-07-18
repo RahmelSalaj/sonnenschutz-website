@@ -16,11 +16,13 @@
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
-  {{ settings.body_font | font_face: font_display: 'swap' }}
   {%- assign body_font_bold = settings.body_font | font_modify: 'weight', 'bolder' -%}
-  {%- if body_font_bold -%}
-    {{ body_font_bold | font_face: font_display: 'swap' }}
-  {%- endif -%}
+  <style>
+    {{ settings.body_font | font_face: font_display: 'swap' }}
+    {%- if body_font_bold -%}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+    {%- endif -%}
+  </style>
 
   <style>
     :root {
